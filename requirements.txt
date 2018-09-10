@@ -1,2 +1,3 @@
-Flask
-Flask-MySQL
+libffi
+Flask==0.12.3
+Flask-MySQL==1.2.0
