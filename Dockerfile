@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-RUN mkdir /Fresco_API
+RUN mkdir /Mysql_Api
 
 RUN apk update \
   && apk add --no-cache python3 \
@@ -9,10 +9,10 @@ RUN apk update \
   && apk add --no-cache subversion \
   && apk add curl bash binutils tar git \
   && python3 -m ensurepip \
-  && git clone https://github.com/kanishkagarwaal/Fresco_API /Fresco_API \
-  && pip3 install -r /Fresco_API/requirements.txt 	
+  && git clone https://github.com/monika412/Mysql_Api /Mysql_Api \
+  && pip3 install -r /Mysql_Api/requirements.txt 	
 
-#VOLUME ["/Fresco_API"]
 
-CMD cd /Fresco_API && git pull && python3 /Fresco_API/TestCassandraDb.py
+
+CMD cd /Mysql_Api && git pull && python3 /Mysql_Api/mysql_api.py
 
